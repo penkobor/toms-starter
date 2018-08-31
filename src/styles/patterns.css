@@ -1,0 +1,15 @@
+.sm-message {
+  @apply .w-full text-blue-darker p-2 my-2
+}
+
+.sm-message-well {
+  @apply sm-message border bg-blue-lightest border-blue-lighter rounded-sm
+}
+
+.sm-error-well {
+  @apply border bg-red-lightest border-red-lighter rounded-sm w-full text-red-darker p-2
+}
+
+.simple-button {
+  @apply border rounded p-1
+}

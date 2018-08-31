@@ -45,7 +45,11 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "mobx": "^5.1.0",
+    "mobx-react": "^5.2.5",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "tailwindcss": "^0.6.5",
+    "takeme": "^0.11.1"
   }
 }

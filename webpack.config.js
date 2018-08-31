@@ -52,10 +52,8 @@ module.exports = {
           {
             loader: 'css-loader',
             query: {
-              modules: true,
               sourceMap: !isProduction,
               importLoaders: 1,
-              localIdentName: isProduction ? '[hash:base64:5]' : '[local]__[hash:base64:5]'
             }
           },
           {
@@ -65,9 +63,9 @@ module.exports = {
               plugins: [
                 require('postcss-import')({ addDependencyTo: webpack }),
                 require('postcss-url')(),
+                require('tailwindcss')('./tailwind.js'),
                 require('postcss-preset-env')({
-                  /* use stage 2 features (defaults) */
-                  stage: 2,
+                  stage: 0
                 }),
                 require('postcss-reporter')(),
                 require('postcss-browser-reporter')({
