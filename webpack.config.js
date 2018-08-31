@@ -9,7 +9,6 @@ var outPath = path.join(__dirname, './dist');
 // plugins
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 module.exports = {
   context: sourcePath,
@@ -107,7 +106,6 @@ module.exports = {
       NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
       DEBUG: false
     }),
-    // new WebpackCleanupPlugin(),
     new MiniCssExtractPlugin({
       filename: '[contenthash].css',
       disable: !isProduction
