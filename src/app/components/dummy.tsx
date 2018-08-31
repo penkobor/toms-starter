@@ -1,4 +1,4 @@
-import * as React from 'React';
+import * as React from 'react';
 
 export class Dummy extends React.Component {
   render() {

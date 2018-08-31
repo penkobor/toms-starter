@@ -119,14 +119,12 @@ module.exports = {
   devServer: {
     contentBase: sourcePath,
     hot: true,
-    // Suppress webpack dev server frivolous warning about React/react case sensitivity
-    quiet: true,
     inline: true,
     historyApiFallback: {
       disableDotRule: true
     },
     stats: 'minimal',
-    clientLogLevel: 'error'
+    clientLogLevel: 'warning'
   },
   // https://webpack.js.org/configuration/devtool/
   devtool: isProduction ? 'hidden-source-map' : 'cheap-module-eval-source-map',
