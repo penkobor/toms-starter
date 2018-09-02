@@ -3,14 +3,26 @@ import { observer } from 'mobx-react'
 import { routeState } from 'app/routeState'
 import { link } from 'takeme'
 import { links } from 'app/links'
+import { AppBar, Toolbar, Button } from '@material-ui/core'
 
 export const Nav = observer(() => {
-  return <div>
-    {routeState.loggedIn && <div>
-      <a href={link(links.profile('dave'))}>Dave</a>
-      <a href={link(links.profile('john'))}>John</a>
-    </div>}
-    {routeState.loggedIn && <button className='simple-button' onClick={() => routeState.logout()}>Logout</button>}
-
-  </div>;
+  return <AppBar position="static" color="primary">
+    <Toolbar>
+      {routeState.loggedIn && <div>
+        <Button className='mr-2' color='default' variant='outlined' href={link(links.profile('dave'))}>Dave</Button>
+        <Button className='mr-2' color='default' variant='outlined' href={link(links.profile('john'))}>John</Button>
+      </div>}
+      <div className='flex-grow'/>
+      {routeState.loggedIn && <Button
+        variant='raised'
+        color='secondary'
+        onClick={() => routeState.logout()}>Logout</Button>
+      }
+      {!routeState.loggedIn && <Button
+        variant='raised'
+        color='secondary'
+        onClick={() => routeState.login()}>Login</Button>
+      }
+    </Toolbar>
+  </AppBar>
 });

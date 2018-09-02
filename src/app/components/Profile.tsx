@@ -4,8 +4,8 @@ import { Nav } from 'app/components/Nav'
 
 export const Profile = observer(({ profileId }: { profileId: string }) =>
   <div>
-    <h3 className='text-red'>Profile of: {profileId}</h3>
     <Nav />
+    <h3 className='text-red'>Profile of: {profileId}</h3>
   </div>
 );
 
