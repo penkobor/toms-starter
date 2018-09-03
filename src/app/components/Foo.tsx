@@ -5,6 +5,9 @@ import { observer } from 'mobx-react'
 // import { links } from 'app/links'
 // import { AppBar, Toolbar, Button } from '@material-ui/core'
 
-export const Foo = observer(() => {
-  return <h1>Foo3</h1>
-});
+@observer
+export class Foo extends React.Component {
+  render() {
+    return <h1>F1o1o3</h1>
+  }
+}
