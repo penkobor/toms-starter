@@ -11,6 +11,48 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
   },
   "license": "MIT",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/jest/setup.js"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.ts?(x)",
+      "<rootDir>/src/**/?(*.)(spec|test).ts?(x)"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^.+\\.tsx?$": "<rootDir>/config/jest/typescriptTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web"
+    },
+    "moduleFileExtensions": [
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "web.js",
+      "js",
+      "web.jsx",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "<rootDir>/tsconfig.test.json"
+      }
+    }
+  },
   "devDependencies": {
     "@types/classnames": "2.2.6",
     "@types/history": "4.7.0",
@@ -25,6 +67,7 @@
     "file-loader": "^1.1.11",
     "html-loader": "^1.0.0-alpha.0",
     "html-webpack-plugin": "^4.0.0-alpha",
+    "jest": "^23.5.0",
     "mini-css-extract-plugin": "^0.4.1",
     "postcss": "^7.0.2",
     "postcss-browser-reporter": "^0.5.0",
@@ -36,6 +79,7 @@
     "prettier": "^1.14.2",
     "react-hot-loader": "^4.3.4",
     "style-loader": "^0.22.1",
+    "ts-jest": "^23.1.4",
     "ts-loader": "^4.4.2",
     "typescript": "^3.0",
     "url-loader": "^1.0.1",
@@ -45,7 +89,9 @@
   },
   "dependencies": {
     "@material-ui/core": "^3.0.1",
+    "@types/jest": "^23.3.1",
     "classnames": "^2.2.6",
+    "ky": "^0.2.0",
     "mobx": "^5.1.0",
     "mobx-react": "^5.2.5",
     "react": "^16.4.2",

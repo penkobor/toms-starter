@@ -2,7 +2,7 @@ import { observable, action } from 'mobx'
 import { navigate } from 'takeme'
 import { links } from 'app/links'
 
-export type Route = 'login' | 'profile'
+export type Route = keyof typeof links
 
 export class RouteState {
   @observable route: Route = 'login'
@@ -11,7 +11,7 @@ export class RouteState {
     this.route = route
   }
 
-  @observable loggedIn = false
+  @observable loggedIn = true
   @observable loginRequiredMessage: string = ''
   @action setLoginRequiredMessage(message: string) {
     this.loginRequiredMessage = message

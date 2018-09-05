@@ -5,7 +5,7 @@ import { Nav } from 'app/components/Nav'
 import { Foo } from 'app/components/Foo'
 import { observable } from 'mobx'
 import { Button } from '@material-ui/core'
-import { AppStore } from 'app/stores/AppStore';
+import { AppStore } from 'app/stores/AppStore'
 
 @inject('appStore')
 @observer
@@ -16,7 +16,6 @@ export class Login extends React.Component<{ appStore?: AppStore }, {}> {
     this.counter++
   }
   render() {
-    console.log(this.props.appStore)
     return <div>
       <Nav />
       <h3>Login Page</h3>

@@ -8,6 +8,11 @@ export const router = new Router([
     enter: () => routeState.setRoute('login')
   },
   {
+    $: links.posts(),
+    enter: () => routeState.setRoute('posts')
+  },
+
+  {
     $: links.profile(':profileId'),
     enter: ({ params: { profileId } }) => {
       routeState.setRoute('profile')

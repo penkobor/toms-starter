@@ -13,6 +13,7 @@ export class Nav extends React.Component {
         {routeState.loggedIn && <div>
           <Button className='mr-2' color='default' variant='outlined' href={link(links.profile('dave'))}>Dave</Button>
           <Button className='mr-2' color='default' variant='outlined' href={link(links.profile('john'))}>John</Button>
+          <Button className='mr-2' color='secondary' variant='outlined' href={link(links.posts())}>Posts</Button>
         </div>}
         <div className='flex-grow' />
         {routeState.loggedIn && <Button

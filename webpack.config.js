@@ -119,7 +119,7 @@ module.exports = {
     historyApiFallback: {
       disableDotRule: true
     },
-    stats: 'minimal',
+    // stats: 'minimal',
     clientLogLevel: 'warning'
   },
   // https://webpack.js.org/configuration/devtool/
